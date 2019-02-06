@@ -12,12 +12,13 @@ namespace Task4
         static void Main(string[] args)
         {
             string path = @"C:\Users\asus-\source\repos\Week2\Task4\task4Path.txt";
-            string path1 = @"C:\Users\asus-\source\repos\Week2\Task4\task4PathNew.txt";
+            string path1 = @"C:\Users\asus-\source\repos\Week2\Task4";
             FileInfo fileInf = new FileInfo(path);
-            if (fileInf.Exists)
+            DirectoryInfo dirInf = new DirectoryInfo(path1);
+            if (fileInf.Exists && dirInf.Exists)
             {
-                fileInf.CopyTo(path1, true);
-                fileInf.Delete();
+                fileInf.CopyTo(path1 + @"\task4NewPath.txt", true);
+                //fileInf.Delete();
             }
         }
     }
