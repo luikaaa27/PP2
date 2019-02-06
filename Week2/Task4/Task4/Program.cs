@@ -18,7 +18,7 @@ namespace Task4
             if (fileInf.Exists && dirInf.Exists)
             {
                 fileInf.CopyTo(path1 + @"\task4NewPath.txt", true);
-                //fileInf.Delete();
+                fileInf.Delete();
             }
         }
     }
