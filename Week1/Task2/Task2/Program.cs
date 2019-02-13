@@ -6,37 +6,40 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    class Student
+    class Student//create a new class Student
     {
+        //declare a name, id, year of student
         public string name;
-        public int id;
+        public string id;
         public int year;
-        
-        public Student (string name,int id, int year)
+
+        public Student(string name, string id, int year)
         {
+            //Use this to qualify the name, id and year:
             this.name = name;
             this.id = id;
             this.year = year;
         }
         public Student()
         {
+            //reading the Student properties
             name = Console.ReadLine();
-            id = Convert.ToInt32(Console.ReadLine());
+            id = Console.ReadLine();
             year = Convert.ToInt32(Console.ReadLine());
         }
-        public void PrintInfo()
+        public void PrintInfo()//Method to print out the information about the student
         {
-            Console.WriteLine(name);
-            Console.WriteLine(id);
-            Console.WriteLine(year);
+            Console.WriteLine(name + " " + id + " " + year);
+
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Student s = new Student();
-            s.PrintInfo();
+            Student student = new Student();//create a new Student Object
+            student.PrintInfo();//Print out the information about the student
+            student.year += 1;//increment the year of study
         }
     }
 }
