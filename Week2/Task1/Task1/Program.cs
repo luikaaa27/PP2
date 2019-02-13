@@ -9,6 +9,7 @@ namespace Task1
 {
     class Program
     {
+        //code to determine if reading string is polindrome or not
         static void Solve(string str)
         {
             bool ok = true;
@@ -31,15 +32,18 @@ namespace Task1
         }
         static void Main(string[] args)
         {
+            //Open a file with read access
             FileStream task1 = new FileStream(@"C:\Users\asus-\source\repos\Week2\Task1\task1.txt",FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(task1);
 
-            string line = reader.ReadLine();
-            //Console.WriteLine(line);
+            //create a "stream reader" and link it to the file stream
+            StreamReader reader = new StreamReader(task1);
+            string line = reader.ReadLine();//read string from the file
+
+            
 
             Solve(line);
-            reader.Close();
-            task1.Close();
+            reader.Close();//close the stream reader
+            task1.Close();//close the stream file
 
         }
     }
