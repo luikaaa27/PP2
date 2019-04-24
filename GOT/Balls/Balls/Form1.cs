@@ -51,7 +51,6 @@ namespace Balls
             colors.Add(orange);
             for (int i = 0; i < 10; ++i)
                 board.Add(white);
-
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)

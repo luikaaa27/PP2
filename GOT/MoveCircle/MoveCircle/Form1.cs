@@ -35,10 +35,6 @@ namespace MoveCircle
             }
         }
 
-      /*  private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            
-        }*/
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -61,9 +57,6 @@ namespace MoveCircle
             }
         }
 
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
+        
     }
 }

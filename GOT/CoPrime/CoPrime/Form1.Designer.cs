@@ -34,7 +34,7 @@
             this.pow = new System.Windows.Forms.Button();
             this.coPrime = new System.Windows.Forms.Button();
             this.Closest = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Fibonacci = new System.Windows.Forms.Button();
             this.sqrt = new System.Windows.Forms.Button();
             this.sign = new System.Windows.Forms.Button();
             this.allClear = new System.Windows.Forms.Button();
@@ -130,17 +130,18 @@
             this.Closest.UseVisualStyleBackColor = false;
             this.Closest.Click += new System.EventHandler(this.Closest_Click);
             // 
-            // button7
+            // Fibonacci
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
-            this.button7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button7.Location = new System.Drawing.Point(245, 98);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(49, 34);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "M-";
-            this.button7.UseVisualStyleBackColor = false;
+            this.Fibonacci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.Fibonacci.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Fibonacci.Location = new System.Drawing.Point(245, 98);
+            this.Fibonacci.Margin = new System.Windows.Forms.Padding(4);
+            this.Fibonacci.Name = "Fibonacci";
+            this.Fibonacci.Size = new System.Drawing.Size(54, 34);
+            this.Fibonacci.TabIndex = 9;
+            this.Fibonacci.Text = "FBNC";
+            this.Fibonacci.UseVisualStyleBackColor = false;
+            this.Fibonacci.Click += new System.EventHandler(this.Fibonacci_Click);
             // 
             // sqrt
             // 
@@ -509,7 +510,7 @@
             this.Controls.Add(this.allClear);
             this.Controls.Add(this.backspace);
             this.Controls.Add(this.CE);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Fibonacci);
             this.Controls.Add(this.Closest);
             this.Controls.Add(this.coPrime);
             this.Controls.Add(this.pow);
@@ -531,7 +532,7 @@
         private System.Windows.Forms.Button pow;
         private System.Windows.Forms.Button coPrime;
         private System.Windows.Forms.Button Closest;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Fibonacci;
         private System.Windows.Forms.Button sqrt;
         private System.Windows.Forms.Button sign;
         private System.Windows.Forms.Button allClear;
