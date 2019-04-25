@@ -35,6 +35,36 @@ namespace Calculator
             }
             return Fib[number];
         }
+       public static string FromDecimalToBinary(int n)
+        {
+            string result = "";
+            int rem = 0;
+            int num = Convert.ToInt32(n);
+            while (num > 0)
+            {
+                rem = num % 2;
+                num = num / 2;
+                result = rem.ToString() + result;
+            }
+            return result;
+        }
+        public static string FromDecimalToOctal(int n)
+        {
+            string result = "";
+            int rem = 0;
+            int num = Convert.ToInt32(n);
+            while (num > 0)
+            {
+                rem = num % 8;
+                num = num / 8;
+                result = rem.ToString() + result;
+            }
+            return result;
+        }
+      /*  public static string FromDecimalToHex(int n)
+        {
+           
+        }*/
         private double first = 0;
         public Form1()
         {
@@ -64,7 +94,6 @@ namespace Calculator
         private void b5_Click(object sender, EventArgs e)
         {
             input.Text += "5";
-
         }
 
         private void b6_Click(object sender, EventArgs e)
@@ -166,6 +195,29 @@ namespace Calculator
                         first = (y * min);
                 }
             }
+            if (history.Text[0] == 'B')
+            {
+                if(input.Text.IndexOf(',') == -1)
+                {
+                 first = Convert.ToDouble(FromDecimalToBinary(Convert.ToInt32(first)));
+                }
+            }
+            if(history.Text[0] == 'O')
+            {
+                if (input.Text.IndexOf(',') == -1)
+                {
+                    first = Convert.ToDouble(FromDecimalToOctal(Convert.ToInt32(first)));
+                }
+            }
+            /*if (history.Text[0] == 'H')
+            {
+                if (input.Text.IndexOf(',') == -1)
+                {
+                    first += first;
+                    string hexadecimal = (first.ToString("X"));
+                    input.Text = hexadecimal;
+                }
+            }*/
             if (history.Text[0] == '~')
             {
                 if (input.Text.IndexOf(',') == -1)
@@ -173,6 +225,15 @@ namespace Calculator
                     first = Fib(Convert.ToInt32(first));
                 }
             }
+            if (history.Text[0] == 'l' && history.Text[1]=='o')
+            {
+                first = Math.Log10(first);
+            }
+            if (history.Text[0] == 'l' && history.Text[1]=='n')
+            {
+                first = Math.Log(first);
+            }
+            
             history.Text = "";
             input.Text = first.ToString();
         }
@@ -181,12 +242,10 @@ namespace Calculator
         {
 
         }
-
         private void mod_Click(object sender, EventArgs e)
         {
 
         }
-
         private void sqrt_Click(object sender, EventArgs e)
         {
             if (input.Text == "")
@@ -222,9 +281,6 @@ namespace Calculator
                 return;
             input.Text = input.Text.Substring(0, input.Text.Length - 1);
         }
-
-
-
         private void button1_KeyUp(object sender, KeyEventArgs e)
         {
         }
@@ -290,6 +346,102 @@ namespace Calculator
                 first = Convert.ToInt32(input.Text);
                 history.Text = "~" + first.ToString() + "ByFibonacci";
                 input.Text = "";
+            }
+        }
+
+        private void log_click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "log" + first.ToString();
+            input.Text = "";
+        }
+
+        private void ln_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "ln" + first.ToString();
+            input.Text = "";
+        }
+
+        private void sin_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "sin" + first.ToString();
+            double degree = Math.PI * first / 180.0;
+            input.Text = Math.Sin(degree).ToString();
+            
+        }
+
+        private void cos_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "cos" + first.ToString();
+            double degree = Math.PI * first / 180.0;
+            input.Text = Math.Cos(degree).ToString();
+        }
+
+        private void binary_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                first = Convert.ToInt32(input.Text);
+                history.Text = "Binary of: " + first.ToString();
+                input.Text = "";
+                first.ToString();
+            }
+        }
+
+        private void octal_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                first = Convert.ToInt32(input.Text);
+                history.Text = "Octal of: " + first.ToString();
+                input.Text = "";
+                first.ToString();
+            }
+        }
+
+        private void Hexadecimal_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                first = int.Parse(input.Text);
+                history.Text = "Hex of: " + first.ToString();
+                input.Text = "";
+                string res = "";
+                int i = 0, r;
+                while(first != 0)
+                {
+                    r = (int)first % 16;
+                    if (r < 10)
+                    {
+                        r += 48;
+                        r = (char)r;
+                    }
+                    else
+                    {
+                        r += 55;
+                        r = (char)r;
+                    }
+                    first /= 16;
+                    res = r.ToString() ;
+                }
+                input.Text = res;
             }
         }
     }

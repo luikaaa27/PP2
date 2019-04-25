@@ -59,6 +59,13 @@
             this.b3 = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.history = new System.Windows.Forms.TextBox();
+            this.log = new System.Windows.Forms.Button();
+            this.ln = new System.Windows.Forms.Button();
+            this.sin = new System.Windows.Forms.Button();
+            this.cos = new System.Windows.Forms.Button();
+            this.binary = new System.Windows.Forms.Button();
+            this.octal = new System.Windows.Forms.Button();
+            this.Hexadecimal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // input
@@ -78,7 +85,7 @@
             // 
             // factorial
             // 
-            this.factorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.factorial.BackColor = System.Drawing.Color.LightBlue;
             this.factorial.ForeColor = System.Drawing.Color.MidnightBlue;
             this.factorial.Location = new System.Drawing.Point(73, 98);
             this.factorial.Margin = new System.Windows.Forms.Padding(4);
@@ -91,7 +98,7 @@
             // 
             // pow
             // 
-            this.pow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.pow.BackColor = System.Drawing.Color.LightBlue;
             this.pow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pow.ForeColor = System.Drawing.Color.MidnightBlue;
             this.pow.Location = new System.Drawing.Point(16, 98);
@@ -105,7 +112,7 @@
             // 
             // coPrime
             // 
-            this.coPrime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.coPrime.BackColor = System.Drawing.Color.LightBlue;
             this.coPrime.Font = new System.Drawing.Font("Lucida Fax", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coPrime.ForeColor = System.Drawing.Color.MidnightBlue;
             this.coPrime.Location = new System.Drawing.Point(131, 98);
@@ -119,7 +126,7 @@
             // 
             // Closest
             // 
-            this.Closest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.Closest.BackColor = System.Drawing.Color.LightBlue;
             this.Closest.ForeColor = System.Drawing.Color.MidnightBlue;
             this.Closest.Location = new System.Drawing.Point(188, 98);
             this.Closest.Margin = new System.Windows.Forms.Padding(4);
@@ -132,12 +139,12 @@
             // 
             // Fibonacci
             // 
-            this.Fibonacci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(235)))), ((int)(((byte)(246)))));
+            this.Fibonacci.BackColor = System.Drawing.Color.LightBlue;
             this.Fibonacci.ForeColor = System.Drawing.Color.MidnightBlue;
             this.Fibonacci.Location = new System.Drawing.Point(245, 98);
             this.Fibonacci.Margin = new System.Windows.Forms.Padding(4);
             this.Fibonacci.Name = "Fibonacci";
-            this.Fibonacci.Size = new System.Drawing.Size(54, 34);
+            this.Fibonacci.Size = new System.Drawing.Size(51, 34);
             this.Fibonacci.TabIndex = 9;
             this.Fibonacci.Text = "FBNC";
             this.Fibonacci.UseVisualStyleBackColor = false;
@@ -145,10 +152,10 @@
             // 
             // sqrt
             // 
-            this.sqrt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.sqrt.BackColor = System.Drawing.Color.LightBlue;
             this.sqrt.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sqrt.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.sqrt.Location = new System.Drawing.Point(245, 140);
+            this.sqrt.Location = new System.Drawing.Point(245, 182);
             this.sqrt.Margin = new System.Windows.Forms.Padding(4);
             this.sqrt.Name = "sqrt";
             this.sqrt.Size = new System.Drawing.Size(49, 34);
@@ -159,7 +166,7 @@
             // 
             // sign
             // 
-            this.sign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.sign.BackColor = System.Drawing.Color.LightBlue;
             this.sign.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sign.ForeColor = System.Drawing.Color.MidnightBlue;
             this.sign.Location = new System.Drawing.Point(188, 140);
@@ -173,7 +180,7 @@
             // 
             // allClear
             // 
-            this.allClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.allClear.BackColor = System.Drawing.Color.LightBlue;
             this.allClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allClear.ForeColor = System.Drawing.Color.MidnightBlue;
             this.allClear.Location = new System.Drawing.Point(131, 140);
@@ -187,7 +194,7 @@
             // 
             // backspace
             // 
-            this.backspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.backspace.BackColor = System.Drawing.Color.LightBlue;
             this.backspace.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.backspace.ForeColor = System.Drawing.Color.MidnightBlue;
             this.backspace.Location = new System.Drawing.Point(16, 140);
@@ -201,7 +208,7 @@
             // 
             // CE
             // 
-            this.CE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.CE.BackColor = System.Drawing.Color.LightBlue;
             this.CE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CE.ForeColor = System.Drawing.Color.MidnightBlue;
             this.CE.Location = new System.Drawing.Point(73, 140);
@@ -215,10 +222,10 @@
             // 
             // mod
             // 
-            this.mod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.mod.BackColor = System.Drawing.Color.LightBlue;
             this.mod.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mod.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mod.Location = new System.Drawing.Point(245, 182);
+            this.mod.Location = new System.Drawing.Point(246, 224);
             this.mod.Margin = new System.Windows.Forms.Padding(4);
             this.mod.Name = "mod";
             this.mod.Size = new System.Drawing.Size(49, 34);
@@ -229,7 +236,7 @@
             // 
             // div
             // 
-            this.div.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.div.BackColor = System.Drawing.Color.LightBlue;
             this.div.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.div.ForeColor = System.Drawing.Color.MidnightBlue;
             this.div.Location = new System.Drawing.Point(188, 182);
@@ -327,7 +334,7 @@
             // 
             // mult
             // 
-            this.mult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.mult.BackColor = System.Drawing.Color.LightBlue;
             this.mult.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mult.ForeColor = System.Drawing.Color.MidnightBlue;
             this.mult.Location = new System.Drawing.Point(188, 224);
@@ -341,10 +348,10 @@
             // 
             // inv
             // 
-            this.inv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.inv.BackColor = System.Drawing.Color.LightBlue;
             this.inv.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.inv.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.inv.Location = new System.Drawing.Point(245, 224);
+            this.inv.Location = new System.Drawing.Point(245, 266);
             this.inv.Margin = new System.Windows.Forms.Padding(4);
             this.inv.Name = "inv";
             this.inv.Size = new System.Drawing.Size(49, 34);
@@ -355,13 +362,13 @@
             // 
             // equal
             // 
-            this.equal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.equal.BackColor = System.Drawing.Color.LightBlue;
             this.equal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.equal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.equal.Location = new System.Drawing.Point(247, 266);
+            this.equal.Location = new System.Drawing.Point(247, 308);
             this.equal.Margin = new System.Windows.Forms.Padding(4);
             this.equal.Name = "equal";
-            this.equal.Size = new System.Drawing.Size(49, 76);
+            this.equal.Size = new System.Drawing.Size(49, 34);
             this.equal.TabIndex = 29;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = false;
@@ -369,7 +376,7 @@
             // 
             // plus
             // 
-            this.plus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.plus.BackColor = System.Drawing.Color.LightBlue;
             this.plus.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.plus.ForeColor = System.Drawing.Color.MidnightBlue;
             this.plus.Location = new System.Drawing.Point(189, 308);
@@ -453,7 +460,7 @@
             // 
             // minus
             // 
-            this.minus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.minus.BackColor = System.Drawing.Color.LightBlue;
             this.minus.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.minus.ForeColor = System.Drawing.Color.MidnightBlue;
             this.minus.Location = new System.Drawing.Point(188, 266);
@@ -480,12 +487,110 @@
             this.history.TabIndex = 30;
             this.history.TextChanged += new System.EventHandler(this.history_TextChanged);
             // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.Color.LightBlue;
+            this.log.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.log.Location = new System.Drawing.Point(248, 140);
+            this.log.Margin = new System.Windows.Forms.Padding(4);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(48, 34);
+            this.log.TabIndex = 31;
+            this.log.Text = "log";
+            this.log.UseVisualStyleBackColor = false;
+            this.log.Click += new System.EventHandler(this.log_click);
+            // 
+            // ln
+            // 
+            this.ln.BackColor = System.Drawing.Color.LightBlue;
+            this.ln.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.ln.Location = new System.Drawing.Point(304, 98);
+            this.ln.Margin = new System.Windows.Forms.Padding(4);
+            this.ln.Name = "ln";
+            this.ln.Size = new System.Drawing.Size(48, 34);
+            this.ln.TabIndex = 32;
+            this.ln.Text = "ln";
+            this.ln.UseVisualStyleBackColor = false;
+            this.ln.Click += new System.EventHandler(this.ln_Click);
+            // 
+            // sin
+            // 
+            this.sin.BackColor = System.Drawing.Color.LightBlue;
+            this.sin.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.sin.Location = new System.Drawing.Point(304, 140);
+            this.sin.Margin = new System.Windows.Forms.Padding(4);
+            this.sin.Name = "sin";
+            this.sin.Size = new System.Drawing.Size(48, 34);
+            this.sin.TabIndex = 33;
+            this.sin.Text = "sin";
+            this.sin.UseVisualStyleBackColor = false;
+            this.sin.Click += new System.EventHandler(this.sin_Click);
+            // 
+            // cos
+            // 
+            this.cos.BackColor = System.Drawing.Color.LightBlue;
+            this.cos.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cos.Location = new System.Drawing.Point(304, 182);
+            this.cos.Margin = new System.Windows.Forms.Padding(4);
+            this.cos.Name = "cos";
+            this.cos.Size = new System.Drawing.Size(48, 34);
+            this.cos.TabIndex = 34;
+            this.cos.Text = "cos";
+            this.cos.UseVisualStyleBackColor = false;
+            this.cos.Click += new System.EventHandler(this.cos_Click);
+            // 
+            // binary
+            // 
+            this.binary.BackColor = System.Drawing.Color.LightBlue;
+            this.binary.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.binary.Location = new System.Drawing.Point(304, 224);
+            this.binary.Margin = new System.Windows.Forms.Padding(4);
+            this.binary.Name = "binary";
+            this.binary.Size = new System.Drawing.Size(48, 34);
+            this.binary.TabIndex = 35;
+            this.binary.Text = "binary";
+            this.binary.UseVisualStyleBackColor = false;
+            this.binary.Click += new System.EventHandler(this.binary_Click);
+            // 
+            // octal
+            // 
+            this.octal.BackColor = System.Drawing.Color.LightBlue;
+            this.octal.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.octal.Location = new System.Drawing.Point(304, 267);
+            this.octal.Margin = new System.Windows.Forms.Padding(4);
+            this.octal.Name = "octal";
+            this.octal.Size = new System.Drawing.Size(48, 34);
+            this.octal.TabIndex = 36;
+            this.octal.Text = "octal";
+            this.octal.UseVisualStyleBackColor = false;
+            this.octal.Click += new System.EventHandler(this.octal_Click);
+            // 
+            // Hexadecimal
+            // 
+            this.Hexadecimal.BackColor = System.Drawing.Color.LightBlue;
+            this.Hexadecimal.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Hexadecimal.Location = new System.Drawing.Point(304, 306);
+            this.Hexadecimal.Margin = new System.Windows.Forms.Padding(4);
+            this.Hexadecimal.Name = "Hexadecimal";
+            this.Hexadecimal.Size = new System.Drawing.Size(48, 34);
+            this.Hexadecimal.TabIndex = 37;
+            this.Hexadecimal.Text = "hexadecimal";
+            this.Hexadecimal.UseVisualStyleBackColor = false;
+            this.Hexadecimal.Click += new System.EventHandler(this.Hexadecimal_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(235)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(312, 353);
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(359, 353);
+            this.Controls.Add(this.Hexadecimal);
+            this.Controls.Add(this.octal);
+            this.Controls.Add(this.binary);
+            this.Controls.Add(this.cos);
+            this.Controls.Add(this.sin);
+            this.Controls.Add(this.ln);
+            this.Controls.Add(this.log);
             this.Controls.Add(this.history);
             this.Controls.Add(this.equal);
             this.Controls.Add(this.minus);
@@ -557,5 +662,12 @@
         private System.Windows.Forms.Button b3;
         private System.Windows.Forms.Button minus;
         private System.Windows.Forms.TextBox history;
+        private System.Windows.Forms.Button log;
+        private System.Windows.Forms.Button ln;
+        private System.Windows.Forms.Button sin;
+        private System.Windows.Forms.Button cos;
+        private System.Windows.Forms.Button binary;
+        private System.Windows.Forms.Button octal;
+        private System.Windows.Forms.Button Hexadecimal;
     }
 }
