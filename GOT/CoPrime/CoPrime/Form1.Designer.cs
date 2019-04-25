@@ -66,6 +66,13 @@
             this.binary = new System.Windows.Forms.Button();
             this.octal = new System.Windows.Forms.Button();
             this.Hexadecimal = new System.Windows.Forms.Button();
+            this.sqrtY = new System.Windows.Forms.Button();
+            this.PowOf10 = new System.Windows.Forms.Button();
+            this.LCM = new System.Windows.Forms.Button();
+            this.Reverse = new System.Windows.Forms.Button();
+            this.FromHexToDec = new System.Windows.Forms.Button();
+            this.f = new System.Windows.Forms.Button();
+            this.SumOfPrimes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // input
@@ -79,7 +86,7 @@
             this.input.Margin = new System.Windows.Forms.Padding(4);
             this.input.Name = "input";
             this.input.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.input.Size = new System.Drawing.Size(279, 43);
+            this.input.Size = new System.Drawing.Size(392, 43);
             this.input.TabIndex = 2;
             this.input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -160,7 +167,7 @@
             this.sqrt.Name = "sqrt";
             this.sqrt.Size = new System.Drawing.Size(49, 34);
             this.sqrt.TabIndex = 14;
-            this.sqrt.Text = "√";
+            this.sqrt.Text = "√x";
             this.sqrt.UseVisualStyleBackColor = false;
             this.sqrt.Click += new System.EventHandler(this.sqrt_Click);
             // 
@@ -479,11 +486,11 @@
             this.history.Enabled = false;
             this.history.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.history.HideSelection = false;
-            this.history.Location = new System.Drawing.Point(189, 15);
+            this.history.Location = new System.Drawing.Point(245, 12);
             this.history.Margin = new System.Windows.Forms.Padding(4);
             this.history.Name = "history";
             this.history.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.history.Size = new System.Drawing.Size(105, 27);
+            this.history.Size = new System.Drawing.Size(161, 27);
             this.history.TabIndex = 30;
             this.history.TextChanged += new System.EventHandler(this.history_TextChanged);
             // 
@@ -504,7 +511,7 @@
             // 
             this.ln.BackColor = System.Drawing.Color.LightBlue;
             this.ln.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.ln.Location = new System.Drawing.Point(304, 98);
+            this.ln.Location = new System.Drawing.Point(360, 224);
             this.ln.Margin = new System.Windows.Forms.Padding(4);
             this.ln.Name = "ln";
             this.ln.Size = new System.Drawing.Size(48, 34);
@@ -578,12 +585,115 @@
             this.Hexadecimal.UseVisualStyleBackColor = false;
             this.Hexadecimal.Click += new System.EventHandler(this.Hexadecimal_Click);
             // 
+            // sqrtY
+            // 
+            this.sqrtY.BackColor = System.Drawing.Color.LightBlue;
+            this.sqrtY.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sqrtY.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.sqrtY.Location = new System.Drawing.Point(361, 306);
+            this.sqrtY.Margin = new System.Windows.Forms.Padding(4);
+            this.sqrtY.Name = "sqrtY";
+            this.sqrtY.Size = new System.Drawing.Size(49, 34);
+            this.sqrtY.TabIndex = 38;
+            this.sqrtY.Text = "y√x";
+            this.sqrtY.UseVisualStyleBackColor = false;
+            this.sqrtY.Click += new System.EventHandler(this.sqrtY_Click);
+            // 
+            // PowOf10
+            // 
+            this.PowOf10.BackColor = System.Drawing.Color.LightBlue;
+            this.PowOf10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PowOf10.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.PowOf10.Location = new System.Drawing.Point(360, 267);
+            this.PowOf10.Margin = new System.Windows.Forms.Padding(4);
+            this.PowOf10.Name = "PowOf10";
+            this.PowOf10.Size = new System.Drawing.Size(49, 34);
+            this.PowOf10.TabIndex = 39;
+            this.PowOf10.Text = "10^x";
+            this.PowOf10.UseVisualStyleBackColor = false;
+            this.PowOf10.Click += new System.EventHandler(this.PowOf10_Click);
+            // 
+            // LCM
+            // 
+            this.LCM.BackColor = System.Drawing.Color.LightBlue;
+            this.LCM.Font = new System.Drawing.Font("Lucida Fax", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCM.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LCM.Location = new System.Drawing.Point(304, 98);
+            this.LCM.Margin = new System.Windows.Forms.Padding(4);
+            this.LCM.Name = "LCM";
+            this.LCM.Size = new System.Drawing.Size(49, 34);
+            this.LCM.TabIndex = 40;
+            this.LCM.Text = "lcm";
+            this.LCM.UseVisualStyleBackColor = false;
+            this.LCM.Click += new System.EventHandler(this.LCM_Click);
+            // 
+            // Reverse
+            // 
+            this.Reverse.BackColor = System.Drawing.Color.LightBlue;
+            this.Reverse.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Reverse.Location = new System.Drawing.Point(360, 184);
+            this.Reverse.Margin = new System.Windows.Forms.Padding(4);
+            this.Reverse.Name = "Reverse";
+            this.Reverse.Size = new System.Drawing.Size(48, 34);
+            this.Reverse.TabIndex = 41;
+            this.Reverse.Text = "reverse";
+            this.Reverse.UseVisualStyleBackColor = false;
+            this.Reverse.Click += new System.EventHandler(this.Reverse_Click);
+            // 
+            // FromHexToDec
+            // 
+            this.FromHexToDec.BackColor = System.Drawing.Color.LightBlue;
+            this.FromHexToDec.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.FromHexToDec.Location = new System.Drawing.Point(360, 140);
+            this.FromHexToDec.Margin = new System.Windows.Forms.Padding(4);
+            this.FromHexToDec.Name = "FromHexToDec";
+            this.FromHexToDec.Size = new System.Drawing.Size(48, 34);
+            this.FromHexToDec.TabIndex = 42;
+            this.FromHexToDec.Text = "ToDec";
+            this.FromHexToDec.UseVisualStyleBackColor = false;
+            this.FromHexToDec.Click += new System.EventHandler(this.FromHexToDec_Click);
+            // 
+            // f
+            // 
+            this.f.BackColor = System.Drawing.Color.LightBlue;
+            this.f.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.f.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.f.Location = new System.Drawing.Point(361, 98);
+            this.f.Margin = new System.Windows.Forms.Padding(4);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(49, 34);
+            this.f.TabIndex = 43;
+            this.f.Text = "f";
+            this.f.UseVisualStyleBackColor = false;
+            this.f.Click += new System.EventHandler(this.f_Click);
+            // 
+            // SumOfPrimes
+            // 
+            this.SumOfPrimes.BackColor = System.Drawing.Color.LightBlue;
+            this.SumOfPrimes.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SumOfPrimes.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.SumOfPrimes.Location = new System.Drawing.Point(418, 308);
+            this.SumOfPrimes.Margin = new System.Windows.Forms.Padding(4);
+            this.SumOfPrimes.Name = "SumOfPrimes";
+            this.SumOfPrimes.Size = new System.Drawing.Size(49, 34);
+            this.SumOfPrimes.TabIndex = 44;
+            this.SumOfPrimes.Text = "SumOfPrimes";
+            this.SumOfPrimes.UseVisualStyleBackColor = false;
+            this.SumOfPrimes.Click += new System.EventHandler(this.SumOfPrimes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(359, 353);
+            this.ClientSize = new System.Drawing.Size(494, 349);
+            this.Controls.Add(this.SumOfPrimes);
+            this.Controls.Add(this.f);
+            this.Controls.Add(this.FromHexToDec);
+            this.Controls.Add(this.Reverse);
+            this.Controls.Add(this.LCM);
+            this.Controls.Add(this.PowOf10);
+            this.Controls.Add(this.sqrtY);
             this.Controls.Add(this.Hexadecimal);
             this.Controls.Add(this.octal);
             this.Controls.Add(this.binary);
@@ -669,5 +779,12 @@
         private System.Windows.Forms.Button binary;
         private System.Windows.Forms.Button octal;
         private System.Windows.Forms.Button Hexadecimal;
+        private System.Windows.Forms.Button sqrtY;
+        private System.Windows.Forms.Button PowOf10;
+        private System.Windows.Forms.Button LCM;
+        private System.Windows.Forms.Button Reverse;
+        private System.Windows.Forms.Button FromHexToDec;
+        private System.Windows.Forms.Button f;
+        private System.Windows.Forms.Button SumOfPrimes;
     }
 }

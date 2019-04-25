@@ -23,9 +23,42 @@ namespace Calculator
 
             return x;
         }
+        static int lcm(int x, int y)
+        {
+            int n1, n2;
+            if (x > y)
+            {
+                n1 = x;
+                n2 = y;
+            }
+            else
+            {
+                n1 = y;
+                n2 = x;
+            }
+            for (int i = 1; i < n2; i++)
+            {
+                if ((n1 * i) % n2 == 0)
+                {
+                    return i * n1;
+                }
+            }
+            return n1 * n2;
+        }
+        public static int Revers(int n)
+        {
+            int rev = 0;
+            while (n > 0)
+            {
+                int remainder = n % 10;
+                rev = (rev * 10) + remainder;
+                n /= 10;
+            }
+            return rev;
+        }
         public static int Fib(int n)
         {
-            int number = n - 1; 
+            int number = n - 1;
             int[] Fib = new int[number + 1];
             Fib[0] = 0;
             Fib[1] = 1;
@@ -35,7 +68,7 @@ namespace Calculator
             }
             return Fib[number];
         }
-       public static string FromDecimalToBinary(int n)
+        public static string FromDecimalToBinary(int n)
         {
             string result = "";
             int rem = 0;
@@ -61,10 +94,10 @@ namespace Calculator
             }
             return result;
         }
-      /*  public static string FromDecimalToHex(int n)
-        {
-           
-        }*/
+        /*  public static string FromDecimalToHex(int n)
+          {
+
+          }*/
         private double first = 0;
         public Form1()
         {
@@ -121,6 +154,10 @@ namespace Calculator
             input.Text += "0";
         }
 
+        private void f_Click(object sender, EventArgs e)
+        {
+            input.Text += "f";
+        }
         private void comma_Click(object sender, EventArgs e)
         {
             if (input.Text == "" || input.Text.IndexOf(',') != -1)
@@ -156,9 +193,9 @@ namespace Calculator
             input.Text = "";
         }
 
+        double second = 0;
         private void equal_Click(object sender, EventArgs e)
         {
-            double second = 0;
             if (input.Text != "")
             {
                 second = Convert.ToDouble(input.Text);
@@ -173,6 +210,8 @@ namespace Calculator
                 first /= second;
             if (history.Text[0] == '^')
                 first = Math.Pow(first, second);
+            if (history.Text[0] == 'V')
+                first = Math.Pow(first, 1 / second);
             if (history.Text[0] == ':')
             {
                 if (input.Text.IndexOf(',') == -1)
@@ -180,7 +219,14 @@ namespace Calculator
                     first = gcd(Convert.ToInt32(first), Convert.ToInt32(input.Text));
                 }
             }
-            if(history.Text[0] == '#')
+            if (history.Text[0] == 'L')
+            {
+                if (input.Text.IndexOf(',') == -1)
+                {
+                    first = lcm(Convert.ToInt32(first), Convert.ToInt32(input.Text));
+                }
+            }
+            if (history.Text[0] == '#')
             {
                 if (input.Text.IndexOf(',') == -1)
                 {
@@ -195,29 +241,66 @@ namespace Calculator
                         first = (y * min);
                 }
             }
-            if (history.Text[0] == 'B')
+            if (history.Text[0] == '&')
             {
-                if(input.Text.IndexOf(',') == -1)
+                if (input.Text.IndexOf(',') == -1)
                 {
-                 first = Convert.ToDouble(FromDecimalToBinary(Convert.ToInt32(first)));
+                    int n = 0;
+                    int m = 0;
+                    int[] prime1 = new int[n];
+                    int[] prime2 = new int[m];
+                    int f = 0;
+                    int r = 0;
+                    int frt = 0;
+                    int scn = 0;
+                    for (int j = 1; j <= Convert.ToInt32(first); j++)
+                    {
+                        bool isPrime = true;
+                        for (int i = 2; i < j/2; i++)
+                        {
+                            if (j % i == 0)
+                            {
+                                isPrime = false;
+                            }
+                        }
+                        frt += j;
+                    }
+                    for (int j = 1; j <= Convert.ToInt32(second); j++)
+                    {
+                        bool isPrime = true;
+                        for (int i = 2; i < j/2; i++)
+                        {
+                            if (j % i == 0)
+                            {
+                                isPrime = false;
+                            }
+                        }
+                        scn += j;
+                    }
+                    first = frt + scn;
                 }
             }
-            if(history.Text[0] == 'O')
+
+            /*string a = Convert.ToString(history.Text[0]);
+            string c = Convert.ToString(second);
+            input.Text = b + a + c;
+            input.Text = first.ToString();
+        } */
+            if (history.Text[0] == 'B')
+            {
+                if (input.Text.IndexOf(',') == -1)
+                {
+                    first = Convert.ToDouble(FromDecimalToBinary(Convert.ToInt32(first)));
+                }
+            }
+            if (history.Text[0] == 'O')
             {
                 if (input.Text.IndexOf(',') == -1)
                 {
                     first = Convert.ToDouble(FromDecimalToOctal(Convert.ToInt32(first)));
                 }
             }
-            /*if (history.Text[0] == 'H')
-            {
-                if (input.Text.IndexOf(',') == -1)
-                {
-                    first += first;
-                    string hexadecimal = (first.ToString("X"));
-                    input.Text = hexadecimal;
-                }
-            }*/
+
             if (history.Text[0] == '~')
             {
                 if (input.Text.IndexOf(',') == -1)
@@ -225,26 +308,37 @@ namespace Calculator
                     first = Fib(Convert.ToInt32(first));
                 }
             }
-            if (history.Text[0] == 'l' && history.Text[1]=='o')
+            if (history.Text[0] == 'l' && history.Text[1] == 'o')
             {
                 first = Math.Log10(first);
             }
-            if (history.Text[0] == 'l' && history.Text[1]=='n')
+            if (history.Text[0] == 'l' && history.Text[1] == 'n')
             {
                 first = Math.Log(first);
             }
-            
+
             history.Text = "";
             input.Text = first.ToString();
         }
 
         private void inv_Click(object sender, EventArgs e)
         {
+            if (input.Text == "")
+                return;
+            first = 1 / Convert.ToDouble(input.Text);
+            history.Text = "1/" + input.Text;
+            input.Text = "";
+            input.Text = Convert.ToString(first);
 
         }
         private void mod_Click(object sender, EventArgs e)
         {
-
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text) / 100;
+            history.Text = input.Text + "%";
+            input.Text = "";
+            input.Text = Convert.ToString(first);
         }
         private void sqrt_Click(object sender, EventArgs e)
         {
@@ -375,7 +469,7 @@ namespace Calculator
             history.Text = "sin" + first.ToString();
             double degree = Math.PI * first / 180.0;
             input.Text = Math.Sin(degree).ToString();
-            
+
         }
 
         private void cos_Click(object sender, EventArgs e)
@@ -418,31 +512,120 @@ namespace Calculator
         {
             if (input.Text == "")
                 return;
+
+            history.Text = "Hex of: " + input.Text;
+
+            int i = Convert.ToInt32(input.Text);
+            input.Text = Convert.ToString(i, 16);
+
+        }
+
+        private void sqrtY_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "V" + first.ToString();
+            input.Text = "";
+        }
+
+        private void PowOf10_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            first = Convert.ToDouble(input.Text);
+            history.Text = "10^" + first.ToString();
+            input.Text = Convert.ToString(Math.Pow(10, first));
+        }
+
+        private void LCM_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
             if (input.Text.IndexOf(',') == -1)
             {
-                first = int.Parse(input.Text);
-                history.Text = "Hex of: " + first.ToString();
+                first = Convert.ToDouble(input.Text);
+                history.Text = "LCM: " + first.ToString();
                 input.Text = "";
-                string res = "";
-                int i = 0, r;
-                while(first != 0)
-                {
-                    r = (int)first % 16;
-                    if (r < 10)
-                    {
-                        r += 48;
-                        r = (char)r;
-                    }
-                    else
-                    {
-                        r += 55;
-                        r = (char)r;
-                    }
-                    first /= 16;
-                    res = r.ToString() ;
-                }
-                input.Text = res;
             }
+        }
+
+        private void Reverse_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                first = Convert.ToDouble(input.Text);
+                history.Text = "Reverse of: " + first.ToString();
+                input.Text = "";
+                input.Text = Convert.ToString(Revers(Convert.ToInt32(first)));
+            }
+        }
+
+        private void FromHexToDec_Click(object sender, EventArgs e)
+        {
+            if (input.Text == "")
+                    return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                /* first = Convert.ToInt32(input.Text, 16);
+                 input.Text = Convert.ToString(first);*/ // from hex to dec
+
+                    /*  string s = input.Text;
+                        int b = Convert.ToInt32(s, 2);
+                   input.Text = Convert.ToString(b);*/ //from binary to dec
+
+                string s = input.Text;
+                int b = Convert.ToInt32(s, 8);
+                input.Text = Convert.ToString(b);
+            }
+           
+        }
+
+        private void SumOfPrimes_Click(object sender, EventArgs e)
+        {
+           if(input.Text == "")
+                return;
+            if (input.Text.IndexOf(',') == -1)
+            {
+                first = Convert.ToInt32(input.Text);
+                history.Text = "&" + first.ToString() + "SumOfPrimes";
+                input.Text = "";
+            }
+        }
+        static int primeSum(int l, int r)
+        {
+            int sum = 0;
+            for (int i = r; i >= l; i--)
+            {
+
+                // Check for prime 
+                bool isPrime = checkPrime(i);
+                if (isPrime)
+                {
+
+                    // Sum the prime number 
+                    sum = sum + i;
+                }
+            }
+            return sum;
+        }
+        static bool checkPrime(int numberToCheck)
+        {
+            if (numberToCheck == 1)
+            {
+                return false;
+            }
+            for (int i = 2;
+                     i * i <= numberToCheck; i++)
+            {
+                if (numberToCheck % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
